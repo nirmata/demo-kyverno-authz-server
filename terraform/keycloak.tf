@@ -16,7 +16,7 @@ provider "keycloak" {
 }
 locals {
   realm_id = "master"
-  groups   = ["kube-dev", "kube-admin", "us-east-1_wmY4m1rhW_CiscoSAML", "us-east-1_wmY4m1rhW_Cisco", "gen-ai-admins", "platform_admin", "gen-ai-assistants"]
+  groups   = ["kube-dev", "kube-admin"]
   user_groups = {
     user-dev   = ["kube-dev"]
     user-admin = ["kube-admin"]
