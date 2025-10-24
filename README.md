@@ -394,17 +394,17 @@ apk add curl jq
 
 ```bash
 # Set variables (adjust for your configuration)
-ISSUER="http://keycloak.keycloak.svc.cluster.local:8080/realms/demo-realm"
+ISSUER="http://keycloak.keycloak.svc.cluster.local:8080/realms/master"
 TOKEN_ENDPOINT="$ISSUER/protocol/openid-connect/token"
 
 # Get access token
 ACCESS_TOKEN=$(curl -s -X POST $TOKEN_ENDPOINT \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "grant_type=password" \
-  -d "client_id=demo-client" \
-  -d "client_secret=YOUR_CLIENT_SECRET" \
-  -d "username=testuser" \
-  -d "password=testpass" \
+  -d "client_id=kube" \
+  -d "client_secret=kube-client-secret" \
+  -d "username=user-dev" \
+  -d "password=user-dev" \
   -d "scope=openid profile email" | jq -r '.access_token')
 
 echo $ACCESS_TOKEN
