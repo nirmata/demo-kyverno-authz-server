@@ -171,6 +171,7 @@ Keycloak will issue JWT tokens for testing. In production, use your existing IdP
 
 ```bash
 # Install Keycloak with Helm
+kubectl create ns keycloak
 kubectl create -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/refs/heads/main/kubernetes/keycloak.yaml 
 EOF
 ```
