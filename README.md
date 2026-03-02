@@ -405,7 +405,8 @@ ACCESS_TOKEN=$(curl -s -X POST $TOKEN_ENDPOINT \
   -d "client_secret=kube-client-secret" \
   -d "username=user-dev" \
   -d "password=user-dev" \
-  -d "scope=openid profile email" | jq -r '.access_token')
+  -d "scope=openid" \
+  -d "response_type=id_token" | jq -r '.access_token')
 
 echo $ACCESS_TOKEN
 ```
